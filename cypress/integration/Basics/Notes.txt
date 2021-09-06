@@ -1,0 +1,86 @@
+====== Autocomplete Feature =====================================================================================================================
+
+===== Procedure 1 =====
+
+Before starting up the tests, to have some autocomplete support for Cypress we need to add below triple comment line of code at the start - 
+
+                /// <reference types="cypress" /> 
+
+This triple comment line will tell VS Code for which package it needs autocomplete support for.
+VS Code will download whatever needs to be downloaded automatically for us. You’ll see the autocomplete support for that in a minute.
+
+===== Procedure 2 =====
+
+Step 1 - Just create a jsconfig.js file in the root folder of the project
+Step 2 - Add below lines of code, and restart the IDE (if applicable)
+                {
+                "include": 
+                    [
+                        "./node_modules/cypress", 
+                        "cypress/**/*.js"
+                    ]
+                }
+Tada! we're now good to go!
+
+
+
+===================================================================================================================================================
+===================================================================================================================================================
+
+====== Launching  Cypress =========================================================================================================================
+
+We've multiple ways to launch Cypress via Terminal or Command Prompt(cd /your/project/path) - 
+
+1) ./node_modules/bin/cypress open = Full Path OR
+2) $(npm bin)/cypress open OR
+3) npx cypress open OR
+4) via yarn - yarn run cypress open OR
+5) Can also be launched via package.json by making below code changes - 
+                {
+                "scripts": 
+                    {
+                        "cypress:open": "cypress open", //here we can add any text at the KEY name
+                        "test": "echo \"Error: no test specified\" && exit 1"
+                    }
+                }
+    on save, we can launch via npm cypress:open
+
+
+    
+===================================================================================================================================================
+===================================================================================================================================================
+
+====== Test Structure =============================================================================================================================
+
+• Pre conditions
+• Test -Assertions - Expected vs Actual
+• Post conditions
+
+
+
+===================================================================================================================================================
+===================================================================================================================================================
+
+====== Executing Test Scripts =====================================================================================================================
+
+Below are few commands to execute cypress - 
+
+• ./node_modules/.bin/cypress run = This executes all tests under Integration Folder
+• ./node_modules/.bin/cypress run --spec cypress/integration/folder_name/test.js --browser chrome = Executes a specific test file from a folder in browser - Chrome
+
+for headless: 
+• ./node_modules/.bin/cypress run --spec cypress/integration/Tests/launchbrowser.js = Executes a specific test file from a folder in headless mode (uses Electron to execute by default)
+• ./node_modules/.bin/cypress run --spec cypress/integration/Tests/*.js = Executes all tests of a folder in headless mode (uses Electron to execute by default)
+
+
+** You can terminate Cypress by hitting Ctrl + C in the Terminal of editor.
+
+
+===================================================================================================================================================
+===================================================================================================================================================
+
+
+Documentation : 
+
+• Code Completion - https://docs.cypress.io/guides/tooling/IDE-integration#Intelligent-Code-Completion
+• Command Line Runner - https://docs.cypress.io/guides/guides/command-line#Installation
