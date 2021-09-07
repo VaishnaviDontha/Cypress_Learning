@@ -85,4 +85,4 @@ It open doors to new kind of testing along with ultimate control over your appli
 > **Set-ExecutionPolicy -Scope CurrentUser Unrestricted**
 
 
-Documentation - ![here](https://docs.cypress.io/)
+Official documentation - ![here](https://docs.cypress.io/)
