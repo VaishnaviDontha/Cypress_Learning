@@ -4,7 +4,7 @@
 ![madeby](https://img.shields.io/badge/Documented%20By-Vaishnavi%20Dontha-blue)
 
 # Cypress_Learning
-*This Repo includes all about Cypress.io for QA*
+*This Repo includes all about Cypress.io for QA Test Engineers*
 
 #### Required Tech-Stack
 * Cypress
